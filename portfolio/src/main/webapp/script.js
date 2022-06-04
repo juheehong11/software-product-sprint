@@ -13,16 +13,22 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random quote to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function addRandomQuote() {
+  const quotes =
+      ['A rock pile ceases to be a rock pile the moment a single man contemplates it, bearing within him the image of a cathedral.', 
+      'Happiness can be found, even in the darkest of times, if one only remembers to turn on the light.', 
+      'All we have to decide is what to do with the time that is given us.', 
+      'Go where you must go, and hope!',
+      "I must endure the presence of a few caterpillars if I wish to become acquainted with the butterflies.",
+      "What makes the desert beautiful is that somewhere it hides a well.",
+      ];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }
