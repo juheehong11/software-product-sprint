@@ -4,115 +4,211 @@
     <meta charset="UTF-8">
     <title>Juhee Hong Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
     <script src="script.js"></script>
   </head>
   <body>
     <!-- Intro -->
-    <div id="home" class="intro">
+    <section id="home" class="intro">
       <h1 class="section__title section__title--intro">Hi, I am <strong>Juhee Hong</strong></h1>      
       <p class="section__subtitle section__subtitle--intro">Berkeley EECS '24, Researcher, Aspiring SWE </p>
-      <!--<img src="/images/me.jpg" class="intro__img">-->
-      <p>Click here to get a random favourite quote of mine:</p>
-      <button onclick="addRandomQuote()">"You never walk alone."</button>
-      <div id="quote-container"></div>
-    </div>
+      <img src="images/me.jpg" class="intro__img">
+      <button onclick="addRandomQuote()" class="intro__btn">Click here to get a random favourite quote of mine:</button>
+      <div id="quote-container" class="intro__quote"></div>
+    </section>
 
     <!-- About Me -->
-    <div class="about-me" id="about">
+    <section class="about-me" id="about">
         <h1 class="section__title section__title--about">About Me</h1>
-    </div>
-    <div class="about-me__body">
-        <p>
-            Hi, Hello! 
-            I'm currently a rising junior at UC Berkeley studying Electrical Engineering and Computer Science. 
-            I'm working as a research intern at the 
-            <a href="https://aiis.snu.ac.kr/eng/">
-                Artificial Intelligence Institute of Seoul National University (AIIS)
-            </a>
-            advised by Prof. 
-            <a href="https://cse.snu.ac.kr/en/professor/byung-gon-chun">
-                Byung-Gon Chun
-            </a>
-            as well as a research intern at Berkeley's 
-            <a href="https://rise.cs.berkeley.edu/">
-                RISELab
-            </a>
-            supervised by Prof. 
-            <a href="https://people.eecs.berkeley.edu/~adityagp/">
-                Aditya Parameswaran
-            </a>
-            and Nithin Chalapathi. 
+        <div class="about-me__body">
+            <p>
+                Hi, Hello!  <br> <br>
+                I'm currently a rising junior at UC Berkeley studying Electrical Engineering and Computer Science. <br> <br>
+                I'm working as a research intern at the 
+                <a href="https://aiis.snu.ac.kr/eng/">
+                    Artificial Intelligence Institute of Seoul National University (AIIS)
+                </a>
+                advised by Prof. 
+                <a href="https://cse.snu.ac.kr/en/professor/byung-gon-chun">
+                    Byung-Gon Chun
+                </a>
+                <br>
+                as well as a research intern at Berkeley's 
+                <a href="https://rise.cs.berkeley.edu/">
+                    RISELab
+                </a>
+                supervised by Prof. 
+                <a href="https://people.eecs.berkeley.edu/~adityagp/">
+                    Aditya Parameswaran
+                </a>
+                and Nithin Chalapathi. 
+                <br> <br>
 
-            I'm interested in building softwares that bring useful ideas and tools to life.
-            (come back to this later and elaborate :) )
+                I'm interested in building softwares that bring useful ideas and tools to life, particularly those products that have meaningful impact either on users or the environment or society. 
+                And I am exploring various aspects of it through different courses, research, and extracurriculars 
+                spanning Web/App Development, Data Engineering, and AI/Machine Learning. <br> <br>
 
-            I used to be involved with the mathematics competitions community. I was a winner in South East Asian Mathematics Competition and a few othe regional competitions, 
-            and trained younger matheletes in middle and high school. I also was a top contributer to Mathematical Stack Exchange. 
-            I like to read, take photos, and travel. 
+                I used to be involved with the mathematics competitions community. I was a winner in South East Asian Mathematics Competition and a receipient of awards in few other regional competitions, 
+                and trained younger matheletes in middle and high school. I also was a top contributer to Mathematical Stack Exchange. <br>
+                I like to read, take photos, and travel. <br> <br>
 
-            If it sounds like we might get along, let me know! :D
+                If it sounds like we might get along, let me know! :D
 
-        </p>
-    </div>
+            </p>
+        </div>
+    </section>
 
     <!--Photography-->
     <!--want to make this an assorted randomized photo tile -->
+    <section>
+        <h1>Photography</h1>
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+
+                <div class="photo first">
+                    <img src="images/photo1.jpeg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images/photo3.jpeg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images/photo2.jpeg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images/photo4.jpeg" alt="">
+                </div>
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>
+    </section>
 
     <!--Reads-->
-    <h1>A Recent Book I Read That I Recommend:</h1>
-    <ul>
-        <li>Cursed Bunny, by Bora Chung</li>
-    </ul>
-
-    <h1>My All-Time Favourites</h1>
-    <ul>
-        <li>The Red Book, by Carl Jung</li>
-        <li>Cosmos, by Carl Sagan</li>
-        <li>The Little Prince, by Antoine de Saint-Exupéry</li>
-        <li>And Then There Were None, by Agatha Christie </li>
-        <li>Murder on the Orient Express, by Agatha Christie</li>
-        <li>The Socrates Express, by Eric Weiner</li>
-        <li>The Book Thief, by Markus Zusak</li>
-    </ul>
+    <section>
+        <h1>Reads</h1>
+        <div>
+            <h3>A Recent Book I Read That I Recommend:</h3>
+            <ul>
+                <li>Cursed Bunny, by Bora Chung</li>
+            </ul>
+        
+            <h3>My All-Time Favourites</h3>
+            <ul>
+                <li>The Red Book, by Carl Jung</li>
+                <li>Cosmos, by Carl Sagan</li>
+                <li>The Little Prince, by Antoine de Saint-Exupéry</li>
+                <li>And Then There Were None, by Agatha Christie </li>
+                <li>Murder on the Orient Express, by Agatha Christie</li>
+                <li>The Socrates Express, by Eric Weiner</li>
+                <li>The Book Thief, by Markus Zusak</li>
+            </ul>
+        </div>
+    </section>
 
     <!--Work & Play :) (aka projects/portfolio)-->
     <!-- also want to eventually make this into an assorted "card" stack(?) -->
-    <h1>A Selection from my Projects</h1>
-    <ul>
-        <li>Gitlet</li>
-        <ul>
-            <li>Language: Java</li>
-            <li>Built a version control system that simulates Github with most basic Git functionalities</li>
-        </ul>
-        <li>RookieDB</li>
-        <ul>
-            <li>Language: Java</li>
-            <li>Built a bare-bones database implementation supporting execution of simple SQL queries and transactions in series</li>
-            <li>Supports B+ tree indices, efficient join algorithms, query optimization, multi-granularity locking, and database recovery</li>
-        </ul>
-        <li>Twitter Sentiment Analyzer</li>
-        <ul>
-            <li>Language: Java</li>
-            <li>Built a sentiment analyzer program using the Twitter API and sentiment analysis APIs</li>
-            <li>Program collects a specified number of tweets based on inputs such as date, person, topic, and then analyzes the sentiment of those tweets
-            </li>
-        </ul>
-    </ul>
+    <section>
+        <h1>Work & Play :)</h1>
+        <h3>A Selection of My Projects </h3>
+        <div class="works">
+            <div class="work">
+                <h3>Gitlet</h3>
+                <p>
+                    <ul>
+                        <li>Language: Java</li>
+                        <li>Built a version control system that simulates Github with most basic Git functionalities</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="work">
+                <h3>RookieDB</h3>
+                <p>
+                    <ul>
+                        <li>Language: Java</li>
+                        <li>Built a bare-bones database implementation supporting execution of simple SQL queries and transactions in series</li>
+                        <li>Supports B+ tree indices, efficient join algorithms, query optimization, multi-granularity locking, and database recovery</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="work">
+                <h3>Twitter Sentiment Analyzer</h3>
+                <p>
+                    <ul>
+                        <li>Language: Java</li>
+                        <li>Built a sentiment analyzer program using the Twitter API and sentiment analysis APIs</li>
+                        <li>Program collects a specified number of tweets based on inputs such as date, person, topic, and then analyzes the sentiment of those tweets
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="work">
+                <h3>Voice Controlled Robot Car</h3>
+                <p>
+                    <ul>
+                        <li>Language: Arduino</li>
+                        <li>Built a mobile robot with motor & microphone sensors circuitry and voice classifier that moves around according to voice input commands</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="work">
+                <h3>Harry Potter Sporcle Quiz</h3>
+                <p>
+                    <ul>
+                        <li>Language: JavaScript</li>
+                        <li>Built a web-based timed & interactive trivia quiz inspired by the Sporcle Trivia Quizzes</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="work">
+                <h3>Asteroid Orbit Estimator</h3>
+                <p>
+                    <ul>
+                        <li>Language: Python</li>
+                        <li>Implemented orbit trajectory predictions and calculations; estimated orbit data output by the program published in
+                            Minor Planet Center Publication for the use of other astrophysicists</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+
 
 
     <!--Footer (Contact and Resume, across all pages)-->
     <footer class="footer">
-        <a href="mailto:juheehong311@gmail.com" class="footer-link">juheehong311@gmail.com</a>
-        <a href="https://drive.google.com/file/d/1NsjBv2Ix1BbOGcipIlsYCV6k91rMCOF_/view?usp=sharing">Resume</a>
+        <div>
+            <a target= "_blank" href="mailto:juheehong311@gmail.com" class="footer-link">juheehong311@gmail.com</a>
+        </div>
+        <div>
+            <a target= "_blank" href="https://drive.google.com/file/d/1NsjBv2Ix1BbOGcipIlsYCV6k91rMCOF_/view?usp=sharing">Resume</a>
+        </div>
         <ul class="social-list">
             <li class="social-list__item">
-                <a class="social-list__link" href="https://www.linkedin.com/in/jessie-hong-630730165/">
-                    <i class="fab fa-linkedin"></i>
+                <a target="_blank" class="social-list__link" href="https://www.linkedin.com/in/jessie-hong-630730165/">
+                    <i class="fab fa-linkedin fa-lg"></i>
                 </a>
             </li>
             <li class="social-list__item">
-                <a class="social-list__link" href="https://github.com">
-                    <i class="fab fa-github"></i>
+                <a target="_blank" class="social-list__link" href="https://github.com/juheehong11?tab=repositories">
+                    <i class="fab fa-github fa-lg"></i>
                 </a>
             </li>
         </ul>
