@@ -43,3 +43,12 @@ setInterval(function(){
         counter = 1;
     }
 }, 5000);
+
+async function fetchPokemon() {
+    const serverResponse = await fetch('/hello');
+    const responseText = await serverResponse.text();
+  
+    const pokemon = document.getElementById('pokemon-container');
+    pokemon.innerText = responseText;
+}
+  
