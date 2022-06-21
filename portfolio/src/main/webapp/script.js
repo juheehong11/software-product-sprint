@@ -46,9 +46,28 @@ setInterval(function(){
 
 async function fetchPokemon() {
     const serverResponse = await fetch('/hello');
-    const responseText = await serverResponse.text();
-  
+    const responseText = await serverResponse.json();
+    console.log(responseText)
+    let poke = responseText[Math.floor(Math.random()*responseText.length)];
     const pokemon = document.getElementById('pokemon-container');
-    pokemon.innerText = responseText;
+    pokemon.innerHTML = poke;
 }
+
+async function getServerStats() {
+    const responseFromServer = await fetch('/server-stats');
+    // The json() function returns an object that contains fields that we can
+    // reference to create HTML.
+    const stats = await responseFromServer.json();
   
+    const statsListElement = document.getElementById('server-stats-container');
+    statsListElement.innerHTML = '';
+  
+    statsListElement.appendChild(
+        createListElement('Start time: ' + stats.startTime));
+    statsListElement.appendChild(
+        createListElement('Current time: ' + stats.currentTime));
+    statsListElement.appendChild(
+        createListElement('Max memory: ' + stats.maxMemory));
+    statsListElement.appendChild(
+        createListElement('Used memory: ' + stats.usedMemory));
+  }
