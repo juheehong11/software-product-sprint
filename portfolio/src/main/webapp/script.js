@@ -34,6 +34,11 @@ function addRandomQuote() {
     quoteContainer.innerText = quote;
   }
 
+  function bookrec() {
+      const thankyou = document.getElementById('thanks');
+      thankyou.innerText = "Thank you!"
+  }
+
   
 var counter = 1;
 setInterval(function(){
