@@ -35,7 +35,7 @@ function addRandomQuote() {
   }
 
   function translateAbout() {
-    const par = document.getElementById("about-me-par").value;
+    const par = document.getElementById("about-me-par").innerText;
     const lc = document.getElementById("language").value;
 
     const resultContainer = document.getElementById("translate-container");
