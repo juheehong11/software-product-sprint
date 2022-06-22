@@ -26,8 +26,15 @@
     <!-- About Me -->
     <section class="about-me" id="about">
         <h1 class="section__title section__title--about">About Me</h1>
+        <select class="intro__btn" id="language">
+            <option value="es">English</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+        </select>
+        <button onclick="translateAbout()">Click here to translate! (Fun fact: these are languages I can speak!)</button>
+        <div id="translate-container" class="about-me__body"></div>
         <div class="about-me__body">
-            <p>
+            <p id="about-me-par">
                 Hi, Hello!  <br> <br>
                 I'm currently a rising junior at UC Berkeley studying Electrical Engineering and Computer Science. <br> <br>
                 I'm working as a research intern at the 
@@ -61,6 +68,7 @@
                 If it sounds like we might get along, let me know! :D
 
             </p>
+        </div>
         </div>
     </section>
 

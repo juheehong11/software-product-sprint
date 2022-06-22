@@ -34,6 +34,26 @@ function addRandomQuote() {
     quoteContainer.innerText = quote;
   }
 
+  function translateAbout() {
+    const par = document.getElementById("about-me-par").value;
+    const lc = document.getElementById("language").value;
+
+    const resultContainer = document.getElementById("translate-container");
+    resultContainer.innerText = 'Loading...';
+
+    const params = new URLSearchParams();
+    params.append('par', par);
+    params.append('lc', lc);
+
+    fetch('/translateabout', {
+        method: 'POST',
+        body: params
+    }).then(response => response.text())
+    .then((translatedMessage) => {
+        resultContainer.innerText = translatedMessage;
+    });
+  }
+
   function bookrec() {
       const thankyou = document.getElementById('thanks');
       thankyou.innerText = "Thank you!"

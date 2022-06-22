@@ -56,6 +56,19 @@ a {
     color: var(--clr-accent);
 }
 
+button {
+    margin: 1em;
+    padding: 0.4em;
+    height:50px;
+    font-weight: var(--fw-reg);
+    font-family: var(--ff-primary);
+    color: var(--clr-dark);
+    background-color: #a6c085b5;
+    border-radius:6px;
+    border:none;
+    box-shadow: 0px 0px 1px 1px #1f261a95;
+}
+
 p, li {
     font-size: 20px;
 }
