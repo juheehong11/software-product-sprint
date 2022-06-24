@@ -59,7 +59,8 @@ function addRandomQuote() {
       thankyou.innerText = "Thank you!"
   }
 
-  
+
+// for the photography slides 
 var counter = 1;
 setInterval(function(){
     document.getElementById('radio' + counter).checked = true;
@@ -69,12 +70,14 @@ setInterval(function(){
     }
 }, 5000);
 
+//fetches a list of pokemons I like from PokemonServlet, and randomly selects one
 async function fetchPokemon() {
-    const serverResponse = await fetch('/hello');
+    const serverResponse = await fetch('/pokemon');
     const responseText = await serverResponse.json();
+    const pokemon = document.getElementById('pokemon-container');
+    pokemon.innerHTML = 'Loading...';
     console.log(responseText)
     let poke = responseText[Math.floor(Math.random()*responseText.length)];
-    const pokemon = document.getElementById('pokemon-container');
     pokemon.innerHTML = poke;
 }
 
