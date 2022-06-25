@@ -34,6 +34,8 @@ function addRandomQuote() {
     quoteContainer.innerText = quote;
   }
 
+  // Translates the About blurb into one of the languages selected from the drop-down menu. 
+  //Shows translated blurb and hides original blurb automatically.
   function translateAbout() {
     const original = document.getElementById("about-me-par");
     const paragraph = original.innerText;
@@ -58,6 +60,7 @@ function addRandomQuote() {
     original.style.display = "none";
   }
 
+  //Shows the original (English) About blurb and hides the translated blurb
   function showOriginalAbout() {
     const original = document.getElementById("about-me-par");
     original.style.display = "block";
@@ -65,9 +68,27 @@ function addRandomQuote() {
     translated.style.display = "none";
   }
 
-  function bookrec() {
-      const thankyou = document.getElementById('thanks');
-      thankyou.innerText = "Thank you!"
+  // 
+  function bookRecommendation() {
+    const book_rec = document.getElementById("input_book_rec").innerText;
+
+    const resultContainer = document.getElementById("show_recommended").value;
+
+    const params = new URLSearchParams();
+    params.append('text-input', book_rec);
+
+    fetch('/form-handler', {
+        method: 'POST',
+        body: params
+    }).then(response => response.text())
+    .then((recommendation) => {
+        resultContainer.innerText = "You recommended: " + recommendation;
+    });
+  }
+
+  function bookRecommendationThxMsg() {
+    const thankyou = document.getElementById('thanks');
+    thankyou.innerText = "Thank you!"
   }
 
 
