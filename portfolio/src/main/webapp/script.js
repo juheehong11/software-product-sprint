@@ -36,16 +36,16 @@ function addRandomQuote() {
 
   function translateAbout() {
     const original = document.getElementById("about-me-par");
-    const par = original.innerText;
-    const lc = document.getElementById("language").value;
+    const paragraph = original.innerText;
+    const language = document.getElementById("language").value;
 
     const resultContainer = document.getElementById("translate-container");
     resultContainer.style.display = "block";
     resultContainer.innerText = 'Loading...';
 
     const params = new URLSearchParams();
-    params.append('par', par);
-    params.append('lc', lc);
+    params.append('par', paragraph);
+    params.append('lc', language);
 
     fetch('/translateabout', {
         method: 'POST',
@@ -71,15 +71,16 @@ function addRandomQuote() {
   }
 
 
-// for timing the photography slideshow
-var counter = 1;
+// function that sets up the photography slideshow
+
+var counter = 1; //counter of radio/image
 setInterval(function(){
-    document.getElementById('radio' + counter).checked = true;
-    counter++;
-    if(counter > 4){
+    document.getElementById('radio' + counter).checked = true;  // select #counter-th radio/image to display in the slideshow
+    counter++; 
+    if(counter > 4){ // if at the end of slideshow (i.e. #4th image), go back to #1st image so it keeps the slideshow in a loop.
         counter = 1;
     }
-}, 5000);
+}, 5000); // duration for how long each image will be shown in the slideshow
 
 //fetches a list of pokemons I like from PokemonServlet, and randomly selects one
 async function fetchPokemon() {
