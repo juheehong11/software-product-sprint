@@ -35,10 +35,12 @@ function addRandomQuote() {
   }
 
   function translateAbout() {
-    const par = document.getElementById("about-me-par").innerText;
+    const original = document.getElementById("about-me-par");
+    const par = original.innerText;
     const lc = document.getElementById("language").value;
 
     const resultContainer = document.getElementById("translate-container");
+    resultContainer.style.display = "block";
     resultContainer.innerText = 'Loading...';
 
     const params = new URLSearchParams();
@@ -52,6 +54,15 @@ function addRandomQuote() {
     .then((translatedMessage) => {
         resultContainer.innerText = translatedMessage;
     });
+
+    original.style.display = "none";
+  }
+
+  function showOriginalAbout() {
+    const original = document.getElementById("about-me-par");
+    original.style.display = "block";
+    const translated = document.getElementById("translate-container");
+    translated.style.display = "none";
   }
 
   function bookrec() {
@@ -60,7 +71,7 @@ function addRandomQuote() {
   }
 
 
-// for the photography slides 
+// for timing the photography slideshow
 var counter = 1;
 setInterval(function(){
     document.getElementById('radio' + counter).checked = true;
@@ -72,9 +83,9 @@ setInterval(function(){
 
 //fetches a list of pokemons I like from PokemonServlet, and randomly selects one
 async function fetchPokemon() {
+    const pokemon = document.getElementById('pokemon-container');
     const serverResponse = await fetch('/pokemon');
     const responseText = await serverResponse.json();
-    const pokemon = document.getElementById('pokemon-container');
     pokemon.innerHTML = 'Loading...';
     console.log(responseText)
     let poke = responseText[Math.floor(Math.random()*responseText.length)];
