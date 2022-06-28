@@ -137,12 +137,12 @@
                 <li>The Book Thief, by Markus Zusak</li>
             </ul>
 
-            <form method="POST" onclick="bookRecommendation()" onsubmit="return false">
-                <!-- action="/book-recommender" as a form attribute? -->
+            <form method="POST" onsubmit="return false">
+                <!-- onclick="bookRecommendation()", action="/book-recommender" as a form attribute? -->
                 <p>I'm always hungry for more reads—Recommend me a book! :D</p>
                 <textarea name="text-input" id="input_book_rec">Title Author</textarea>
                 <br/>
-                <input type="submit" onclick="bookRecommendationThxMsg()"/>
+                <input type="submit" onclick="bookRecommendationThxMsg(); bookRecommendation();"/>
                 <p id='show_recommended'></p>
                 <p id='thanks'></p>
             </form>
