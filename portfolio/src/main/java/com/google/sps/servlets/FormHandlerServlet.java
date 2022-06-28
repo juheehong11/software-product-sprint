@@ -1,6 +1,7 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import com.google.gson.Gson;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,10 +13,12 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String textValue = request.getParameter("text-input");
-    System.out.println("recommended: " + textValue);
+    Gson gson = new Gson();
+    String json = gson.toJson(textValue);
+    System.out.println("recommended: " + json);
     response.setContentType("text/html;");
     response.setCharacterEncoding("UTF-8");
-    response.getWriter().println(textValue);
+    response.getWriter().println(json);
   }
   //old code following the tutorial. Kept as comment for future reference
   /*@Override

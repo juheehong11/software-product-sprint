@@ -32,11 +32,11 @@ function addRandomQuote() {
     // Add it to the page.
     const quoteContainer = document.getElementById('quote-container');
     quoteContainer.innerText = quote;
-  }
+}
 
   // Translates the About blurb into one of the languages selected from the drop-down menu. 
   //Shows translated blurb and hides original blurb automatically.
-  function translateAbout() {
+function translateAbout() {
     const original = document.getElementById("about-me-par");
     const paragraph = original.innerText;
     const language = document.getElementById("language").value;
@@ -58,21 +58,22 @@ function addRandomQuote() {
     });
 
     original.style.display = "none";
-  }
+}
 
   //Shows the original (English) About blurb and hides the translated blurb
-  function showOriginalAbout() {
+function showOriginalAbout() {
     const original = document.getElementById("about-me-par");
     original.style.display = "block";
     const translated = document.getElementById("translate-container");
     translated.style.display = "none";
-  }
+}
 
-  // 
-  function bookRecommendation() {
-    const book_rec = document.getElementById("input_book_rec").innerText;
-
-    const resultContainer = document.getElementById("show_recommended").value;
+// takes the inputted recommendation from the submitted book rec form and shows it on the webpage
+function bookRecommendation() {
+    const book_rec = document.getElementById("input_book_rec").value;
+    const resultContainer = document.getElementById("show_recommended");
+    resultContainer.style.display = "block";
+    resultContainer.innerText = 'Loading...';
 
     const params = new URLSearchParams();
     params.append('text-input', book_rec);
@@ -84,16 +85,15 @@ function addRandomQuote() {
     .then((recommendation) => {
         resultContainer.innerText = "You recommended: " + recommendation;
     });
-  }
+}
 
-  function bookRecommendationThxMsg() {
+function bookRecommendationThxMsg() {
     const thankyou = document.getElementById('thanks');
     thankyou.innerText = "Thank you!"
-  }
+}
 
 
-// function that sets up the photography slideshow
-
+/* function that sets up the photography slideshow*/
 var counter = 1; //counter of radio/image
 setInterval(function(){
     document.getElementById('radio' + counter).checked = true;  // select #counter-th radio/image to display in the slideshow
@@ -131,4 +131,4 @@ async function getServerStats() {
         createListElement('Max memory: ' + stats.maxMemory));
     statsListElement.appendChild(
         createListElement('Used memory: ' + stats.usedMemory));
-  }
+}
