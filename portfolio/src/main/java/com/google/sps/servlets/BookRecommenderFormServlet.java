@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/form-handler")
-public class FormHandlerServlet extends HttpServlet {
+@WebServlet("/book-recommender")
+public class BookRecommenderFormServlet extends HttpServlet {
 
   public String eachWordUpperCase(String txt) {
     String regex = "\\b(.)(.*?)\\b";

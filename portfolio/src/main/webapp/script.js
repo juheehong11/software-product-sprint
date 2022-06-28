@@ -78,7 +78,7 @@ function bookRecommendation() {
     const params = new URLSearchParams();
     params.append('text-input', book_rec);
 
-    fetch('/form-handler', {
+    fetch('/book-recommender', {
         method: 'POST',
         body: params
     }).then(response => response.text())
@@ -87,6 +87,7 @@ function bookRecommendation() {
     });
 }
 
+// displays "thank you" message to webpage once book rec form's submit btn is clicked
 function bookRecommendationThxMsg() {
     const thankyou = document.getElementById('thanks');
     thankyou.innerText = "Thank you!"
@@ -114,6 +115,8 @@ async function fetchPokemon() {
     pokemon.innerHTML = poke;
 }
 
+/*
+from weekly tutorials; kept as a comment for possible future reference
 async function getServerStats() {
     const responseFromServer = await fetch('/server-stats');
     // The json() function returns an object that contains fields that we can
@@ -131,4 +134,4 @@ async function getServerStats() {
         createListElement('Max memory: ' + stats.maxMemory));
     statsListElement.appendChild(
         createListElement('Used memory: ' + stats.usedMemory));
-}
+}*/
