@@ -90,6 +90,7 @@ textarea {
     color: var(--clr-dark);
     background-color: #a6c085b5;
     border:none;
+    width: 40%;
 }
 
 p, li {

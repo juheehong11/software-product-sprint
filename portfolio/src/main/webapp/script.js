@@ -107,12 +107,12 @@ setInterval(function(){
 //fetches a list of pokemons I like from PokemonServlet, and randomly selects one
 async function fetchPokemon() {
     const pokemon = document.getElementById('pokemon-container');
+    pokemon.innerHTML = 'I choose you... ';
     const serverResponse = await fetch('/pokemon');
     const responseText = await serverResponse.json();
-    pokemon.innerHTML = 'Loading...';
     console.log(responseText)
     let poke = responseText[Math.floor(Math.random()*responseText.length)];
-    pokemon.innerHTML = poke;
+    pokemon.innerHTML = poke + "!";
 }
 
 /*
