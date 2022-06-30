@@ -8,10 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/* takes the contents of the textarea in the book recommendation form, 
+   modifies the content to be capitalized properly, and writes the result to response */
 @WebServlet("/book-recommender")
 public class BookRecommenderFormServlet extends HttpServlet {
 
-  public String eachWordUpperCase(String txt) {
+  // takes a STRING as an input; capitalises first CHAR of each WORD and returns the result
+  public String eachFirstCharUpperCase(String txt) {
     String regex = "\\b(.)(.*?)\\b";
     String result = Pattern.compile(regex).matcher(txt).replaceAll(
             matche -> matche.group(1).toUpperCase() + matche.group(2)
@@ -29,7 +32,7 @@ public class BookRecommenderFormServlet extends HttpServlet {
     response.setContentType("text/html;");
     response.setCharacterEncoding("UTF-8");
     //response.getWriter().println(json);
-    textValue = eachWordUpperCase(textValue);
+    textValue = eachFirstCharUpperCase(textValue);
     response.getWriter().println(textValue);
   }
   //old code following the tutorial. Kept as comment for future reference
