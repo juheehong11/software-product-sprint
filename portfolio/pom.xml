@@ -51,6 +51,20 @@
         <version>1.70.0</version>
     </dependency>
 
+    <!-- DataStore-->
+    <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datastore</artifactId>
+        <version>1.104.0</version>
+    </dependency>
+
+    <!-- JSoup -->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.14.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
